@@ -18,13 +18,14 @@ public class playershoooot : MonoBehaviour
 		{
 			attack ();
 		}
+
 	}
 
 
 
     void attack()
     {
-        Debug.Log("homo");
+        Debug.Log("test");
        
         var bullet = (GameObject)Instantiate(
             bulletPrefab,
