@@ -1,23 +1,28 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using Valve.VR;
 
 public class playershoooot : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
 
-    void Update()
-    {
-     
-        
+	private Valve.VR.InteractionSystem.Player _player;
+	void Start () {
+		_player = Valve.VR.InteractionSystem.Player.instance;
+	}
+	void Update () {
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Fire();
-        }
-    }
-    
+		if (_player.rightController.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
+		{
+			attack ();
+		}
+	}
 
-    void Fire()
+
+
+    void attack()
     {
         Debug.Log("homo");
        
