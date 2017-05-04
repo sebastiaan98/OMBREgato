@@ -2,22 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
+
 public class playerattack : MonoBehaviour {
-	private Valve.VR.InteractionSystem.Player _player;
+
+private Valve.VR.InteractionSystem.Player _player;
+
 	void Start () {
-		
+        _player = Valve.VR.InteractionSystem.Player.instance;
 	}
 	
-	// Update is called once per frame
+	
 	void Update () {
 		
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+
+          attack();
+        }
 		if (_player.rightController.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
 		{
 			attack ();
 		}
 	}
 
-	void attack(){
+    void Shoot()
+    {
+
+
+    }
+	public void attack(){
 		Debug.Log ("homo");
 		}
 
