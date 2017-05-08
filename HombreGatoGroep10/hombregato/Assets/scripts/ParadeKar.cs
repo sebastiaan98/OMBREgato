@@ -37,7 +37,7 @@ public class ParadeKar : MonoBehaviour {
         
         if (!reachedEndOfPath)
         {
-          
+            
             float distance = Vector3.Distance(transform.position, _wayPoints[currentWayPointIndex].position);
                       if (distance <= _actionRadius)
             {
@@ -48,6 +48,7 @@ public class ParadeKar : MonoBehaviour {
                 }
                 else
                 {
+                    Application.LoadLevel("test");
                     movementSpeed = 0;
                     reachedEndOfPath = true;
                     print("Reached End Of Path");
