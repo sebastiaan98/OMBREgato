@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class baloonhealth : MonoBehaviour {
   
-   
-
-
-	void OnCollisionEnter (Collision col)
+   void OnCollisionEnter (Collision col)
 	{
 		if(col.gameObject.name == "balloon")
 		{
@@ -17,5 +14,9 @@ public class baloonhealth : MonoBehaviour {
 		{
 			Destroy(col.gameObject);
 		}
-	}
+        if (col.gameObject.name == "balloon(Clone)")
+        {
+            Destroy(col.gameObject);
+        }
+    }
 }

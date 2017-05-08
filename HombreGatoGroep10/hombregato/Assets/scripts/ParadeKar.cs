@@ -35,14 +35,12 @@ public class ParadeKar : MonoBehaviour {
     void Update()
     {
        
-        Debug.Log(reachedEndOfPath);
+        
         if (!reachedEndOfPath)
         {
             movementSpeed = 0;
             float distance = Vector3.Distance(transform.position, _wayPoints[currentWayPointIndex].position);
-            Debug.Log(currentWayPointIndex);
-            Debug.Log(distance);
-            if (distance <= _actionRadius)
+                      if (distance <= _actionRadius)
             {
                 if (currentWayPointIndex < _wayPoints.Length - 1)
                 {

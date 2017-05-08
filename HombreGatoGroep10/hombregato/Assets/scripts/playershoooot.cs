@@ -5,24 +5,28 @@ using Valve.VR;
 
 public class playershoooot : MonoBehaviour
 {
-    public GameObject bulletPrefab;
-    public Transform bulletSpawn;
+    [SerializeField]private GameObject bulletPrefab;
+    [SerializeField] private  Transform bulletSpawn;
 
-	private Valve.VR.InteractionSystem.Player _player;
+	private Valve.VR.InteractionSystem.Player player;
 	void Start () {
-		_player = Valve.VR.InteractionSystem.Player.instance;
+		player = Valve.VR.InteractionSystem.Player.instance;
 	}
 	void Update () {
 
-		if (_player.rightController.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
+        if(Input.GetKeyDown(KeyCode.Space))
+            {
+            attack();
+        }
+		if (player.rightController.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
 		{
 			attack ();
 		}
-
-	}
-
-
-
+        if (player.leftController.GetPressDown(SteamVR_Controller.ButtonMask.Trigger))
+        {
+            attack();
+        }
+    }
     void attack()
     {
         Debug.Log("test");
@@ -32,11 +36,6 @@ public class playershoooot : MonoBehaviour
             bulletSpawn.position,
             bulletSpawn.rotation);
 
-    
-        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward *100f;
-
-        
+        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward *100f;  
     }
-
-
 }
