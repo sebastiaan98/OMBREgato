@@ -10,10 +10,11 @@ public class playershoooot : MonoBehaviour
 
 	private Valve.VR.InteractionSystem.Player player;
 	void Start () {
-		player = Valve.VR.InteractionSystem.Player.instance;
+        
+        player = Valve.VR.InteractionSystem.Player.instance;
 	}
 	void Update () {
-
+       
         if(Input.GetKeyDown(KeyCode.Space))
             {
             attack();
@@ -29,9 +30,7 @@ public class playershoooot : MonoBehaviour
     }
     void attack()
     {
-        Debug.Log("test");
-       
-        var bullet = (GameObject)Instantiate(
+       var bullet = (GameObject)Instantiate(
             bulletPrefab,
             bulletSpawn.position,
             bulletSpawn.rotation);
