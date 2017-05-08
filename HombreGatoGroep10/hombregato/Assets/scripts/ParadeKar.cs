@@ -5,8 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class ParadeKar : MonoBehaviour {
 
-    [SerializeField]
-    private float movementSpeed;
+    [SerializeField]  private float movementSpeed;
 
     [SerializeField]
     [Range(0.2f, 50f)]
@@ -38,7 +37,7 @@ public class ParadeKar : MonoBehaviour {
         
         if (!reachedEndOfPath)
         {
-            movementSpeed = 0;
+          
             float distance = Vector3.Distance(transform.position, _wayPoints[currentWayPointIndex].position);
                       if (distance <= _actionRadius)
             {

@@ -35,6 +35,6 @@ public class playershoooot : MonoBehaviour
             bulletSpawn.position,
             bulletSpawn.rotation);
 
-        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward *100f;  
+        bullet.GetComponent<Rigidbody>().velocity = bullet.transform.forward *250;  
     }
 }
